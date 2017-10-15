@@ -1,0 +1,40 @@
+{
+  "variables": {
+    "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
+    "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
+    "region":         "us-east-1"
+  },
+  "builders": [
+    {
+      "type": "googlecompute",
+      "account_file": "packer-google.json",
+      "project_id": "charlieegan3-dev",
+      "source_image": "ubuntu-1604-xenial-v20171011",
+      "zone": "us-central1-a",
+      "ssh_username": "charlieegan3",
+      "machine_type": "n1-highcpu-2"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
+      "script": "./scripts/apt.sh"
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
+      "script": "./scripts/runtimes.sh"
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
+      "script": "./scripts/tools.sh"
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
+      "script": "./scripts/config.sh"
+    }
+  ]
+}
