@@ -34,7 +34,7 @@
     {
       "type": "shell",
       "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "./scripts/config.sh"
+      "script": "./scripts/user.sh"
     }
   ]
 }
