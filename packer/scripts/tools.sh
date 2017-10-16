@@ -52,7 +52,7 @@ sudo -u postgres createdb "$(whoami)" || true
 psql -U postgres -c "ALTER USER $(whoami) WITH SUPERUSER;"
 
 # ngrok
-curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip ngrok.zip
+curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip > ngrok.zip
 unzip ngrok.zip
 mv ngrok /usr/local/bin/
-ngrok.zip
+rm ngrok.zip
