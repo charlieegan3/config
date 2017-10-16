@@ -12,10 +12,6 @@ git fetch origin
 git reset --hard origin/master
 source ~/.bashrc > /dev/null
 
-# ssh
-mkdir -p ~/.ssh/
-curl https://github.com/charlieegan3.keys > .ssh/authorized_keys
-
 # configure vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
