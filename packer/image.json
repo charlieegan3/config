@@ -2,47 +2,47 @@
   "variables": {
     "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
     "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
-    "password": "{{env `PACKER_PASSWORD`}}",
-    "region":         "us-east-1"
+    "region":         "us-east-1",
+    "password":       "{{env `PACKER_PASSWORD`}}"
   },
   "builders": [
     {
-      "type": "googlecompute",
       "account_file": "packer-google.json",
       "image_name": "charlieegan3-dev{{timestamp}}",
+      "machine_type": "n1-highcpu-2",
       "project_id": "charlieegan3-dev",
       "source_image": "ubuntu-1604-xenial-v20171011",
-      "zone": "us-central1-a",
       "ssh_username": "charlieegan3",
-      "machine_type": "n1-highcpu-2"
+      "type": "googlecompute",
+      "zone": "us-central1-a"
     }
   ],
   "provisioners": [
     {
       "type": "shell",
+      "script": "./scripts/system.sh",
       "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "environment_vars": [ "PASSWORD={{user `password`}}" ],
-      "script": "./scripts/system.sh"
+      "environment_vars": [ "PASSWORD={{user `password`}}" ]
     },
     {
       "type": "shell",
-      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "./scripts/apt.sh"
+      "script": "./scripts/apt.sh",
+      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'"
     },
     {
       "type": "shell",
-      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "./scripts/runtimes.sh"
+      "script": "./scripts/runtimes.sh",
+      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'"
     },
     {
       "type": "shell",
-      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "./scripts/tools.sh"
+      "script": "./scripts/tools.sh",
+      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'"
     },
     {
       "type": "shell",
-      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'",
-      "script": "./scripts/user.sh"
+      "script": "./scripts/user.sh",
+      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'"
     }
   ]
 }
