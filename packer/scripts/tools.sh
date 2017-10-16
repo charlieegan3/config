@@ -50,3 +50,9 @@ sed -i.bak -e 's/peer\|md5/trust/g' "$PG_HBA"
 sudo -u postgres createuser "$(whoami)" || true
 sudo -u postgres createdb "$(whoami)" || true
 psql -U postgres -c "ALTER USER $(whoami) WITH SUPERUSER;"
+
+# ngrok
+curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip ngrok.zip
+unzip ngrok.zip
+mv ngrok /usr/local/bin/
+ngrok.zip
