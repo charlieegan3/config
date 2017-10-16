@@ -9,6 +9,7 @@
     {
       "type": "googlecompute",
       "account_file": "packer-google.json",
+      "image_name": "charlieegan3-dev{{timestamp}}",
       "project_id": "charlieegan3-dev",
       "source_image": "ubuntu-1604-xenial-v20171011",
       "zone": "us-central1-a",
