@@ -1,3 +1,5 @@
+Archived in favor of [linux-environment](https://github.com/charlieegan3/linux-environment)
+
 # dotfiles
 
 **Ubuntu Bootstrap**
