@@ -59,3 +59,5 @@ function! SynStack ()
     endfor
 endfunction
 map gm :call SynStack()<CR>
+
+autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path %
