@@ -1,0 +1,32 @@
+snippet unmarshal_json "Unmarshal JSON"
+	var jsonBlob = []byte(`[
+		{"Name": "Platypus", "Order": "Monotremata"},
+		{"Name": "Quoll",    "Order": "Dasyuromorphia"}
+	]`)
+	type Animal struct {
+		Name  string
+		Order string
+	}
+	var animals []Animal
+	err := json.Unmarshal(jsonBlob, &animals)
+	if err != nil {
+		fmt.Println("error:", err)
+	}
+	fmt.Printf("%+v", animals)
+endsnippet
+
+snippet marshal_indent "Marshal JSON"
+	bytes, err := json.MarshalIndent(data, "", "    ")
+	fmt.Println(string(bytes))
+endsnippet
+
+snippet read_file "Read File"
+	file, err := os.Open("file.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	b, err := ioutil.ReadAll(file)
+	fmt.Print(string(b))
+endsnippet
