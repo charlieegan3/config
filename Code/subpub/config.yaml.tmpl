@@ -15,8 +15,7 @@ jobs:
   mappings:
   - source:
       type: http
-      url: https://jetstack.app.eu.opsgenie.com/webapi/webcal/getRecentSchedule?webcalToken=97201e6c52f9a4dd99e9deb42d072680b1dcbe34282d18f8cba75c28f233f747
-      url2: {{ (bitwarden "item" "subpub").notes }}
+      url: {{ (bitwarden "item" "subpub/opsgenie-url").notes }}
     destination:
       type: BucketObject
       path: gs://charlieegan3-static/subpub/opsgenie
@@ -28,7 +27,7 @@ jobs:
   mappings:
   - source:
       type: http
-      url: https://app.timetastic.co.uk/Feeds/MyCalendar/68fa5be2-26f7-4199-8a30-8d50bf8f5995
+      url: {{ (bitwarden "item" "subpub/timetastic-url").notes }}
     destination:
       type: BucketObject
       path: gs://charlieegan3-static/subpub/timetastic
