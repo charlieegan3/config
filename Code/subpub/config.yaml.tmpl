@@ -18,8 +18,7 @@ jobs:
       url: {{ (bitwarden "item" "subpub/opsgenie-url").notes }}
     destination:
       type: BucketObject
-      path: gs://charlieegan3-static/subpub/opsgenie
-      path: {{ (bitwarden "item" "subpub/gcs-url").notes }}
+      path: {{ (bitwarden "item" "subpub/gcs-url").notes }}/opsgenie
 
 - substitutions:
   - type: string
@@ -31,4 +30,4 @@ jobs:
       url: {{ (bitwarden "item" "subpub/timetastic-url").notes }}
     destination:
       type: BucketObject
-      path: gs://charlieegan3-static/subpub/timetastic
+      path: {{ (bitwarden "item" "subpub/gcs-url").notes }}/timetastic
