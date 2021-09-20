@@ -19,6 +19,7 @@ jobs:
     destination:
       type: BucketObject
       path: gs://charlieegan3-static/subpub/opsgenie
+      path: {{ (bitwarden "item" "subpub/gcs-url").notes }}
 
 - substitutions:
   - type: string
