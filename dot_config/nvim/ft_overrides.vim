@@ -10,3 +10,4 @@ autocmd BufRead,BufNewFile {*.sh.tpl} set ft=sh
 autocmd BufRead,BufNewFile {*.json.tpl} set ft=json
 autocmd BufRead,BufNewFile {*.md} set ft=markdown
 autocmd BufRead,BufNewFile {*.html.erb} set ft=eruby
+autocmd BufRead,BufNewFile {*.html.plush} set ft=eruby
