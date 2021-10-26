@@ -1,5 +1,6 @@
 edit:
   command: nvim
+sourceDir: "~/.local/share/chezmoi"
 git:
   autoCommit: true
   autoPush: true
