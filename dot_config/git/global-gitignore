@@ -46,9 +46,6 @@ Thumbs.db
 # IDEs
 .idea/
 
-#ctags
-tags
-
 # python
 *.pyc
 
