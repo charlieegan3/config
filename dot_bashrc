@@ -13,8 +13,8 @@ shopt -s histappend
 
 # imclude 'modules' from config
 source $HOME/.config/bash/aliases.sh
-source $HOME/.config/bash/tools.sh
 source $HOME/.config/bash/environment.sh
+source $HOME/.config/bash/tools.sh
 
 # set prompt, needs things set in aliases
 COLOR_RESET="\[$(tput sgr0)\]" COLOR_CYAN="\[$(tput setaf 6)\]" COLOR_GREEN="\[$(tput setaf 2)\]" COLOR_YELLOW="\[$(tput setaf 3)\]"
