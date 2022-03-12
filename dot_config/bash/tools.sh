@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+
 if [ -f /usr/share/fzf/shell/key-bindings.bash ]; then
   source /usr/share/fzf/shell/key-bindings.bash
 fi
@@ -35,3 +37,10 @@ export GPG_AGENT_INFO
 
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if [[ -e $/opt/homebrew/Caskroom/google-cloud-sdk/ ]]; then
+  source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
+  source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
+fi
+
+[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
