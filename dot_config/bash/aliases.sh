@@ -61,3 +61,9 @@ bran() {
   git checkout $(git b | sed -e 's/^..//' | fzf)
 }
 
+cm() {
+  if [ -z ${BW_SESSION+x} ]; then
+    export BW_SESSION="$(bw unlock --raw)"
+  fi
+  chezmoi $@
+}
