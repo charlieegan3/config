@@ -16,5 +16,6 @@ export PATH="$HOME/.npm-packages/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.tfenv/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 
 export EDITOR=nvim
