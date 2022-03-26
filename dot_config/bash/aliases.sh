@@ -24,12 +24,9 @@ last_status_string() {
   if [ "$last_exit" != "0" ]; then echo -n "[$last_exit]"; fi
 }
 relative_path_to_git_root() {
-  path1=$(git root) path2=$(pwd)
-  common=$(printf '%s\x0%s' "${path1}" "${path2}" | sed 's/\(.*\).*\x0\1.*/\1/')
-  relative_path="${path2/$common/}"
-  if  [ $path1 == "$HOME" ]; then
-    echo -n "${PWD##*/}";
-  elif [ "${#relative_path}" == "0" ]; then
+  gitroot=$(git root) curdir=$(pwd)
+  relative_path="${curdir/$gitroot/}"
+  if [ "${#relative_path}" == "0" ]; then
     echo -n "${PWD##*/}";
   else
     if [ ${#relative_path} -ge 20 ]; then
