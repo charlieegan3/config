@@ -42,3 +42,7 @@ if [[ -e $/opt/homebrew/Caskroom/google-cloud-sdk/ ]]; then
 fi
 
 [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+
+if [ -f "$(which goenv || true)" ]; then
+  eval "$(goenv init -)"
+fi
