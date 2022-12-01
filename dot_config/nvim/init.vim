@@ -47,7 +47,6 @@ source ~/.config/nvim/ft_overrides.vim
 source ~/.config/nvim/mappings.vim
 source ~/.config/nvim/autocommands.vim
 
-colorscheme base16-gruvbox-light-soft
 source ~/.config/nvim/highlighting.vim
 
 function! SynStack ()
