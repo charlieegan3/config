@@ -66,3 +66,5 @@ node_modules
 .bundle
 
 charlieegan3-scratch
+
+.go-version

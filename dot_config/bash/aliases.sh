@@ -42,7 +42,7 @@ permissions() {
 }
 morning() {
   new_date="$(ruby -e "require 'time'; secs = ((Time.now.hour.to_f / 24) * 120 * 60).to_i;   puts (Time.parse(Time.now.strftime('%Y-%m-%d') + ' 07:00:00 +0100') + secs).strftime('%a %d %b %Y 07:19:43 %Z');")"
-  GIT_COMMITTER_DATE=$new_date git commit --date "$new_date"
+  GIT_AUTHOR_DATE=$new_date GIT_COMMITTER_DATE=$new_date git commit --date "$new_date"
 }
 envrc() {
   cat .envrc
