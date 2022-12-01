@@ -1,6 +1,38 @@
 #!/usr/bin/env ruby
 
+require "yaml"
+
 pwd = ENV["PWD"]
+
+def make_row(items)
+  "|" + items.join("|") + "|\n"
+end
+
+def make_table(headers, columns)
+  table = make_row(headers)
+  table += make_row([headers.length.times.map {|e|"---"}])
+
+  if headers.empty? || columns.empty?
+    return ""
+  end
+
+  max_items = columns.max_by {|e| e.length}.length
+
+  for i in 0...max_items
+    items = []
+    columns.each do |col|
+      if col[i].nil?
+        items.push(" ")
+      else
+        items.push(col[i])
+      end
+    end
+
+    table += make_row(items)
+  end
+
+  table
+end
 
 ##############################################################################
 # create index files
@@ -28,41 +60,66 @@ dirs.each do |dir|
   items = { dirs: [], files: []}
 
   # list the files and dirs for the TOC
+  count = 0
   Dir.glob("#{dir}*").each do |e|
     if File.directory?(e)
+      count += 1
       if File.exists?(e+"/index.md")
-        items[:dirs].push(["./"+e.split("/").last+"/index.md", e.split("/").last])
+        icon = ""
+        if File.exists?(e+"/meta.yaml")
+          metadata = YAML.load_file(e+"/meta.yaml")
+          icon = metadata.dig("icon")
+        end
+        items[:dirs].push(["./"+e.split("/").last+"/index.md", e.split("/").last, icon])
       else
         items[:dirs].push(e.split("/").last)
       end
     elsif e.include? ".md"
+      count += 1
       unless e.include? "index.md"
-        items[:files].push(["./"+e.split("/").last, e.split("/").last.delete_suffix(".md")])
+        items[:files].push(["./"+e.split("/").last, e.split("/").last.delete_suffix(".md"), ""])
       end
     end
+  end
+
+  if count == 0
+    next
   end
 
   # generate the markdown for the TOC
-  markdown_lines = []
+  headers = []
+  cols = []
   if !items[:dirs].empty?
-    markdown_lines.push("**Sections**\n")
+    headers.push("Sections")
+
+    col = []
     items[:dirs].sort_by { |e| e.kind_of?(Array) ? e[1] : e }.each do |i|
       if i.kind_of?(Array)
-        markdown_lines.push("- [[#{i[0]}|#{i[1]}]]")
+        col.push("[[#{i[0]}|#{i[2]}#{i[1]}]]")
       else
-        markdown_lines.push("- #{i}")
+        col.push("#{i}")
       end
     end
+    cols.push(col)
   end
   if !items[:files].empty?
-    markdown_lines.push("\n**Pages**\n")
+    headers.push("Files")
+
+    col = []
     items[:files].sort_by {|e|e[1]}.each do |i|
-      markdown_lines.push("- [[#{i[0]}|#{i[1]}]]")
+      col.push("[[#{i[0]}|#{i[1]}]]")
     end
+    cols.push(col)
+  end
+
+  icon = ""
+  if File.exists?(dir+"/meta.yaml")
+    metadata = YAML.load_file(dir+"/meta.yaml")
+    icon = metadata.dig("icon")
   end
 
   index_name = dir.split("/").last
-  content = "# #{index_name}\n\n" + markdown_lines.join("\n") +"\n"
+  content = "# #{icon}#{index_name}\n\n" + make_table(headers, cols) +"\n"
 
   File.write(dir+"index.md", content)
 end
