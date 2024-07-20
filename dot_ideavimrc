@@ -1,4 +1,0 @@
-set timeoutlen=1000
-imap jj <Esc>
-nmap E $
-nmap B 0
