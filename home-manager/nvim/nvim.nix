@@ -2,14 +2,9 @@
 
 let
   cfgDarkMode = builtins.readFile ./cfg/dark_mode.lua;
+  cfgKeyBindings = builtins.readFile ./cfg/keybindings.lua;
 in
 {
-  home.packages = with pkgs;
-    [
-      nil # nix language server
-      nixpkgs-fmt # nix lang formatter
-    ];
-
   programs.neovim = {
     enable = true;
 
@@ -35,7 +30,9 @@ in
       fidget-nvim # notifications from lsp etc
     ];
 
-    extraLuaConfig = cfgDarkMode + ''
+    extraLuaConfig = cfgDarkMode + cfgKeyBindings + ''
+      vim.env.FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!vendor*" --glob "!.git/*"'
+
       local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
       vim.api.nvim_create_autocmd("BufWritePre", {
