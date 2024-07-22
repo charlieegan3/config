@@ -26,3 +26,9 @@ vim.api.nvim_set_keymap('v', '<CR>', '"+y<CR>', { noremap = true, silent = true 
 
 -- Exit insert mode
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, silent = true })
+
+-- Save and quit all files
+vim.api.nvim_set_keymap('n', '<leader>q', ':wqall<CR>', { noremap = true, silent = true })
+
+-- Reload config
+vim.api.nvim_set_keymap('n', '<leader>r', ':lua dofile(vim.env.MYVIMRC)<CR>', { noremap = true, silent = true })

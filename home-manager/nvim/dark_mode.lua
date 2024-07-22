@@ -21,4 +21,5 @@ if is_dark_mode() then
   vim.o.background = 'dark'
 else
   vim.o.background = 'light'
+  vim.cmd('colorscheme delek')
 end

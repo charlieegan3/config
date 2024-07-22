@@ -30,6 +30,9 @@ in
       bind-key k select-pane -U
       bind-key l select-pane -R
 
+      # default is space, but v is more Vim-like
+      bind-key -T copy-mode-vi v send-keys -X begin-selection
+
       # resizes
       bind-key H resize-pane -L 15
       bind-key J resize-pane -D 15
