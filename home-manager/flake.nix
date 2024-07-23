@@ -29,6 +29,7 @@
               fzf
               jq
               yq
+              gh
               tree
               autojump
 
