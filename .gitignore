@@ -2,5 +2,7 @@
 
 !.gitignore
 
+!README.md
+
 !nix/
 !home-manager/
