@@ -19,6 +19,7 @@ in
     ./readline.nix
     ./nvim/nvim.nix
     ./autojump.nix
+    ./fzf.nix
 
     ./wezterm.nix
   ];

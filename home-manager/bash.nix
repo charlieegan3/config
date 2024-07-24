@@ -7,8 +7,8 @@ in
   programs.bash = {
     enable = true;
 
+    historyFile = "${config.home.homeDirectory}/.bash_history";
     historyControl = [ "erasedups" "ignoreboth" ];
-    historyFile = "${config.home.homeDirectory}/..config/bash/.bash_history";
     historyIgnore = [ "exit" "history" ];
 
     sessionVariables = {
