@@ -20,6 +20,7 @@ in
     ./nvim/nvim.nix
     ./autojump.nix
     ./fzf.nix
+    ./atuin.nix
     ./direnv.nix
 
     ./wezterm.nix

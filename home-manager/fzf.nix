@@ -3,7 +3,7 @@
 {
   programs.fzf = {
     enable = true;
-    enableBashIntegration = true;
+    enableBashIntegration = false;
     defaultCommand = ''
       rg --files --hidden --glob "!vendor*" --glob "!.git/*"
     '';

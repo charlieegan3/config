@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 
 {
   programs.readline = {
@@ -7,8 +7,6 @@
     includeSystemConfig = false;
 
     bindings = {
-      "\\e[A" = "history-search-backward";
-      "\\e[B" = "history-search-forward";
       "\\C-w" = "unix-word-rubout";
     };
 
