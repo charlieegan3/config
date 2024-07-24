@@ -41,8 +41,6 @@ in
     ];
 
     extraLuaConfig = cfgDarkMode + cfgKeyBindings + ''
-      vim.env.FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!vendor*" --glob "!.git/*"'
-
       vim.api.nvim_create_autocmd("BufWritePre", {
         callback = function() vim.lsp.buf.format() end,
       })
@@ -69,13 +67,9 @@ in
       -- Maintain undo history
       vim.opt.undofile = true
 
-      -- Set undo directory
+      -- Set undo, backup, and swap file directories
       vim.opt.undodir = vim.fn.expand("~/.config/nvim/.undo/")
-
-      -- Set backup directory
       vim.opt.backupdir = vim.fn.expand("~/.config/nvim/.backup/")
-
-      -- Set swap file directory
       vim.opt.directory = vim.fn.expand("~/.config/nvim/.swp/")
 
       -- Set shift width to 4

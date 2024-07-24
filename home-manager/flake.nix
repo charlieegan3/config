@@ -29,6 +29,7 @@
               yq
               gh
               tree
+              ripgrep
 
               go_1_22
 
