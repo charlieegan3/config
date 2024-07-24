@@ -25,12 +25,12 @@
               direnv
               entr
               ffmpeg
-              fzf
               jq
               yq
               gh
               tree
-              autojump
+
+              go_1_22
 
               xdg-utils # needed for open
               util-linux # rev
