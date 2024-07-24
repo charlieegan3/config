@@ -22,8 +22,8 @@
               git
               htop
               which
-              direnv
               entr
+              nodejs
               ffmpeg
               jq
               yq
