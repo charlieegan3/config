@@ -15,7 +15,11 @@ in
 
   imports = [
     ./tmux.nix
+    ./bash.nix
+    ./readline.nix
     ./nvim/nvim.nix
+    ./autojump.nix
+
     ./wezterm.nix
   ];
 }

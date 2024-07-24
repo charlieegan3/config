@@ -18,7 +18,6 @@
           ./home.nix
           {
             home.packages = with pkgs; [
-              bash
               home-manager
               git
               htop

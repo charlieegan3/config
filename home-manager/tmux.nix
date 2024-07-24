@@ -11,18 +11,27 @@ in
       fi
     '';
   };
+
   programs.tmux = {
     enable = true;
-    sensibleOnTop = false;
-    baseIndex = 1;
-    keyMode = "vi";
+
+    shell = "${binDir}/bash";
     terminal = "tmux-256color";
+
+    sensibleOnTop = false;
+
+    keyMode = "vi";
+    baseIndex = 1;
+
     historyLimit = 100000;
+
     escapeTime = 0;
+
     plugins = with pkgs; [
       tmuxPlugins.yank
       tmuxPlugins.urlview # prefix+u
     ];
+
     extraConfig = ''
       # vim directions for panes
       bind-key h select-pane -L
