@@ -68,6 +68,5 @@ node_modules
 # ruby
 .bundle
 
-charlieegan3-scratch
-
-.go-version
+# created by nix direnv
+.direnv

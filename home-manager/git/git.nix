@@ -2,15 +2,23 @@
 
 {
   home.file = {
-    cfg = {
-      recursive = true;
-      source = ./cfg;
-      target = "${config.home.homeDirectory}/.config/git";
+    "${config.home.homeDirectory}/.config/git/global-gitignore" = {
+      text = builtins.readFile ./cfg/global-gitignore;
+    };
+    "${config.home.homeDirectory}/.config/git/gitmessage" = {
+      text = builtins.readFile ./cfg/gitmessage;
+    };
+    "${config.home.homeDirectory}/.config/git/gitmessage-opa" = {
+      text = builtins.readFile ./cfg/gitmessage-opa;
     };
   };
 
   programs.git = {
     enable = true;
+
+    diff-so-fancy = {
+      enable = true;
+    };
 
     package = pkgs.gitAndTools.gitFull;
 
@@ -19,7 +27,7 @@
 
     aliases = {
       s = "status -sb";
-      c = "diff --cached --word-diff=color";
+      c = "diff --cached";
       lg = "log --pretty=format:'%Cred%h%Creset %Cblue%an %Creset(%Cgreen%ar%Creset) \t%<(55,trunc)%s' --max-count=40";
       stash-all = "stash save --include-untracked";
       b = "branch --sort=-committerdate";
