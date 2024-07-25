@@ -4,6 +4,9 @@ let
   binDir = "${config.home.homeDirectory}/.nix-profile/bin";
 in
 {
+  programs.pls.enable = true;
+  programs.bat.enable = true;
+
   programs.bash = {
     enable = true;
 
@@ -18,6 +21,8 @@ in
     };
 
     shellAliases = {
+      cat = "bat";
+      ls = "pls";
       envrc = ''
         cat .envrc
         chflags nouchg .envrc

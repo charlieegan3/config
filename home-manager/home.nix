@@ -11,17 +11,23 @@ in
   home.file = { };
   home.sessionVariables = { };
 
-  programs.home-manager.enable = true;
+
+  programs = {
+    home-manager.enable = true;
+  };
 
   imports = [
     ./tmux.nix
+    ./nvim/nvim.nix
+    ./fzf.nix
+
+    ./direnv.nix
     ./bash.nix
     ./readline.nix
-    ./nvim/nvim.nix
     ./autojump.nix
-    ./fzf.nix
+    ./starship.nix
     ./atuin.nix
-    ./direnv.nix
+    ./yazi.nix
 
     ./wezterm.nix
   ];
