@@ -13,6 +13,9 @@ let
   wezTermConfig = generateFile template;
 in
 {
-  home.file.".config/wezterm/wezterm.lua".text = wezTermConfig.content;
+  programs.wezterm = {
+    enable = true;
+    extraConfig = wezTermConfig.content;
+  };
 }
 
