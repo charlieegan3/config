@@ -18,8 +18,6 @@
           ./home.nix
           {
             home.packages = with pkgs; [
-              home-manager
-              git
               htop
               which
               entr

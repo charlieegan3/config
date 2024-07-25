@@ -29,6 +29,8 @@ in
     ./atuin.nix
     ./yazi.nix
 
+    ./git/git.nix
+
     ./wezterm.nix
   ];
 }

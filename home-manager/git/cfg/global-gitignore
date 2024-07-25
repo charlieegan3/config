@@ -1,0 +1,73 @@
+
+cal env_vars
+local_env.sh
+
+# tf state backups
+*.backup
+
+# .direnv flake files
+.direnv
+
+# Compiled source
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases
+*.log
+*.sqlite
+
+# OS generated files
+.DS_Store*
+ehthumbs.db
+Thumbs.db
+
+# vagrant directory
+.vagrant
+
+# R files
+.RData
+.Rhistory
+
+# IDEs
+.idea/
+
+# python
+*.pyc
+
+# terraform config
+.terraform
+*.tfstate
+
+# direnv
+.envrc
+
+# make
+*.make
+
+# node
+node_modules
+
+# ruby
+.bundle
+
+charlieegan3-scratch
+
+.go-version
