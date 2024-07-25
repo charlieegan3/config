@@ -32,6 +32,7 @@
               ripgrep
 
               go_1_22
+              golangci-lint
 
               xdg-utils # needed for open
               util-linux # rev
