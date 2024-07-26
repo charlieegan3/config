@@ -16,9 +16,7 @@
   programs.git = {
     enable = true;
 
-    diff-so-fancy = {
-      enable = true;
-    };
+    diff-so-fancy.enable = true;
 
     package = pkgs.gitAndTools.gitFull;
 

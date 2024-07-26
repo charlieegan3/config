@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, ... }:
 
 let
   binDir = "${config.home.homeDirectory}/.nix-profile/bin";
