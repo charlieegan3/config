@@ -26,6 +26,7 @@ in
     gh
     tree
     ripgrep
+    xz
 
     go_1_22
     golangci-lint
