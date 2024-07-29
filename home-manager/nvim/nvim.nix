@@ -134,6 +134,7 @@ in
 
     ./modules/langs/nix/nix.nix
     ./modules/langs/go/go.nix
+    ./modules/langs/rego/rego.nix
   ];
 }
 
