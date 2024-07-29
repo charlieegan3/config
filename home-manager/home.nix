@@ -16,26 +16,25 @@ in
   };
 
   home.packages = with pkgs; [
-    htop
-    which
-    entr
-    nodejs
-    ffmpeg
-    jq
-    yq
-    gh
-    tree
-    ripgrep
-    xz
-
-    go_1_22
-    golangci-lint
-
     xdg-utils # needed for open
     util-linux # rev
     uutils-coreutils-noprefix # cut
     toybox # clear
     gawk # awk
+    which
+    tree
+    entr
+    ffmpeg
+    jq
+    yq
+    htop
+    ripgrep
+    xz
+
+    gh
+    nodejs # needed by gh, and copilot
+
+    colima
   ];
 
   imports = [
