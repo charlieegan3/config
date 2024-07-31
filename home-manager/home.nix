@@ -13,6 +13,8 @@
   };
 
   home.packages = with pkgs; [
+    nixVersions.nix_2_22
+
     xdg-utils # needed for open
     util-linux # rev
     uutils-coreutils-noprefix # cut
