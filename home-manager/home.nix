@@ -29,6 +29,7 @@
     htop
     ripgrep
     xz
+    just
 
     gh
     nodejs # needed by gh, and copilot
