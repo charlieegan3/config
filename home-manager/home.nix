@@ -1,8 +1,5 @@
-{ pkgs, ... }:
+{ pkgs, userName, mac-app-util, ... }:
 
-let
-  userName = "charlieegan3";
-in
 {
   home.username = userName;
   home.homeDirectory = "/Users/${userName}";
@@ -38,6 +35,8 @@ in
   ];
 
   imports = [
+    mac-app-util.homeManagerModules.default
+
     ./tmux.nix
     ./nvim/nvim.nix
     ./fzf.nix
@@ -53,5 +52,7 @@ in
     ./git/git.nix
 
     ./wezterm.nix
+
+    ./casks.nix
   ];
 }
