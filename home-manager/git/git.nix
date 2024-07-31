@@ -50,7 +50,7 @@
         gpgsign = false;
       };
 
-      push.default = "upstream";
+      push.default = "simple";
       init.defaultBranch = "main";
 
       filter.lfs = {
