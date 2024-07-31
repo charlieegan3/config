@@ -70,3 +70,7 @@ node_modules
 
 # created by nix direnv
 .direnv
+
+# created by vscode exts
+.lsp
+.clj-kondo
