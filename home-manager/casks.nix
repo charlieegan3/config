@@ -7,6 +7,7 @@
     geotag
     stats
     unnaturalscrollwheels
+    rectangle
 
     # TODO:
     # chromium
