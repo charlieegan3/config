@@ -51,6 +51,10 @@ in
     ./modules/langs/go/go.nix
     ./modules/langs/rego/rego.nix
     ./modules/langs/lua/lua.nix
+    ./modules/langs/css/css.nix
+    ./modules/langs/json/json.nix
+    ./modules/langs/html/html.nix
+    ./modules/langs/js/js.nix
   ];
 }
 
