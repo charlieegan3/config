@@ -45,7 +45,7 @@
     ./fzf.nix
 
     ./direnv.nix
-    ./bash.nix
+    ./bash/bash.nix
     ./readline.nix
     ./autojump.nix
     ./starship.nix

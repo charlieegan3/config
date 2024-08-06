@@ -3,7 +3,7 @@
 let
   configDirPath = ./extraLuaConfig;
   configFileList = builtins.attrNames (builtins.readDir configDirPath);
-  confifFiles = map (fileName: builtins.readFile "${configDirPath}/${fileName}") configFileList;
+  configFiles = map (fileName: builtins.readFile "${configDirPath}/${fileName}") configFileList;
 in
 {
   home.file = {
@@ -23,7 +23,7 @@ in
     vimAlias = true;
     vimdiffAlias = true;
 
-    extraLuaConfig = builtins.concatStringsSep "\n" confifFiles;
+    extraLuaConfig = builtins.concatStringsSep "\n" configFiles;
 
     plugins = with pkgs.vimPlugins; [
       fzf-vim

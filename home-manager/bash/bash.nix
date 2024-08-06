@@ -1,7 +1,8 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 let
   binDir = "${config.home.homeDirectory}/.nix-profile/bin";
+  bashrcExtra = builtins.readFile ./bashrc.sh;
 in
 {
   programs.pls.enable = true;
@@ -20,6 +21,8 @@ in
       PS1 = "\\W \$ ";
     };
 
+    bashrcExtra = bashrcExtra;
+
     shellAliases = {
       cat = "bat";
       ls = "pls";
@@ -31,10 +34,6 @@ in
         chflags uchg .envrc
       '';
       gitb = "git branch | grep '^\\*' | cut -d' ' -f2 | tr -d '\n'";
-      bran = ''
-        echo "Current: " $(gitb)
-        git checkout $(git b | sed -e 's/^..//' | fzf)
-      '';
     };
   };
 }
