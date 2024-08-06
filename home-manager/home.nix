@@ -30,6 +30,7 @@
     ripgrep
     xz
     just
+    imagemagick
 
     gh
     nodejs # needed by gh, and copilot
