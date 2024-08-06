@@ -17,7 +17,7 @@
         capabilities = capabilities_go,
         settings = {
           gopls = {
-            gofumpt = true, 
+            gofumpt = true,
             analyses = {
               unusedparams = true,
             },
