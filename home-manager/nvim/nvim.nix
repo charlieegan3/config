@@ -14,6 +14,10 @@ in
     };
   };
 
+  home.packages = with pkgs; [
+    dprint
+  ];
+
   programs.neovim = {
     enable = true;
 
