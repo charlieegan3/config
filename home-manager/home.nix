@@ -57,6 +57,8 @@
 
     ./wezterm.nix
 
+    ./dprint/dprint.nix
+
     ./casks.nix
   ];
 }

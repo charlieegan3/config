@@ -5,7 +5,7 @@
   "toml": {},
   "malva": {},
   "markup": {},
-  "yaml": {},
+  "yaml": { "indentBlockSequenceInMap": false },
   "excludes": [
     "**/node_modules",
     "**/*-lock.json"
