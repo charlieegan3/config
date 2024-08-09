@@ -6,3 +6,6 @@
 
 !nix/
 !home-manager/
+
+!flake.nix
+!flake.lock
