@@ -74,3 +74,6 @@ node_modules
 # created by vscode exts
 .lsp
 .clj-kondo
+
+# created by git-hooks.nix
+.pre-commit-config.yaml
