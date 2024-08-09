@@ -12,8 +12,14 @@ in
     enable = true;
 
     historyFile = "${config.home.homeDirectory}/.bash_history";
-    historyControl = [ "erasedups" "ignoreboth" ];
-    historyIgnore = [ "exit" "history" ];
+    historyControl = [
+      "erasedups"
+      "ignoreboth"
+    ];
+    historyIgnore = [
+      "exit"
+      "history"
+    ];
 
     sessionVariables = {
       PATH = "${binDir}:/nix/var/nix/profiles/default/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin";

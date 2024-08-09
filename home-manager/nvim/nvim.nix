@@ -14,9 +14,7 @@ in
     };
   };
 
-  home.packages = with pkgs; [
-    dprint
-  ];
+  home.packages = with pkgs; [ dprint ];
 
   programs.neovim = {
     enable = true;
@@ -51,14 +49,16 @@ in
   imports = [
     ./modules/completion/completion.nix
 
-    ./modules/langs/nix/nix.nix
-    ./modules/langs/go/go.nix
-    ./modules/langs/rego/rego.nix
-    ./modules/langs/lua/lua.nix
     ./modules/langs/css/css.nix
-    ./modules/langs/json/json.nix
     ./modules/langs/html/html.nix
     ./modules/langs/js/js.nix
+
+    ./modules/langs/go/go.nix
+    ./modules/langs/rego/rego.nix
+
+    ./modules/langs/nix/nix.nix
+    ./modules/langs/json/json.nix
+    ./modules/langs/just/just.nix
+    ./modules/langs/lua/lua.nix
   ];
 }
-

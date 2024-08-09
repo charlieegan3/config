@@ -1,9 +1,7 @@
 { pkgs, config, ... }:
 
 {
-  home.packages = with pkgs; [
-    dprint
-  ];
+  home.packages = with pkgs; [ dprint ];
 
   home.file = {
     # this must be here so that it's in a parent dir of files in ~/Code

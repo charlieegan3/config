@@ -1,4 +1,9 @@
-{ pkgs, userName, mac-app-util, ... }:
+{
+  pkgs,
+  userName,
+  mac-app-util,
+  ...
+}:
 
 {
   home.username = userName;

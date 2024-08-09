@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     nil # nix language server
-    nixpkgs-fmt # formatter
+    nixfmt-rfc-style
   ];
 
   programs.neovim = {
@@ -15,7 +15,7 @@
         settings = {
           ['nil'] = {
             formatting = {
-              command = { "nixpkgs-fmt" },
+              command = { "nixfmt" },
             },
           },
         },

@@ -7,9 +7,7 @@
   ];
 
   programs.neovim = {
-    plugins = with pkgs.vimPlugins; [
-      nvim-treesitter-parsers.lua
-    ];
+    plugins = with pkgs.vimPlugins; [ nvim-treesitter-parsers.lua ];
 
     extraLuaConfig = ''
       local capabilities_lua = require('cmp_nvim_lsp').default_capabilities()

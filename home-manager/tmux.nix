@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   binDir = "${config.home.homeDirectory}/.nix-profile/bin";
@@ -65,4 +70,3 @@ in
     '';
   };
 }
-

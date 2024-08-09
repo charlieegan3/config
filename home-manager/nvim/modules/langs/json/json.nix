@@ -2,8 +2,6 @@
 
 {
   programs.neovim = {
-    plugins = with pkgs.vimPlugins; [
-      nvim-treesitter-parsers.json
-    ];
+    plugins = with pkgs.vimPlugins; [ nvim-treesitter-parsers.json ];
   };
 }

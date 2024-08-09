@@ -18,4 +18,3 @@ in
     extraConfig = wezTermConfig.content;
   };
 }
-
