@@ -55,7 +55,7 @@
       brew-nix,
       mac-app-util,
       ...
-    }@inputs:
+    }:
     let
       userName = "charlieegan3";
       utils = flake-utils;
@@ -78,35 +78,6 @@
             };
           };
         };
-
-        checks = {
-          pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
-            src = ./.;
-            hooks = {
-              dprint = {
-                enable = true;
-                name = "dprint check";
-                entry = "dprint check --allow-no-files";
-              };
-              nixfmt = {
-                enable = true;
-                name = "nixfmt check";
-                entry = "nixfmt -c ";
-                types = [ "nix" ];
-              };
-            };
-          };
-        };
-
-        devShells = {
-          default = pkgs.mkShell {
-            #inherit (self.checks.${system}.pre-commit-check) shellHook;
-            #buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
-
-            packages = with pkgs; [ nixfmt-rfc-style ];
-          };
-        };
       }
     );
-
 }
