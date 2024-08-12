@@ -9,3 +9,5 @@
 
 !flake.nix
 !flake.lock
+
+!justfile
