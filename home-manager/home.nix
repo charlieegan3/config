@@ -37,6 +37,8 @@
     just
     imagemagick
 
+    age # secret management
+
     gh
     nodejs # needed by gh, and copilot
 
