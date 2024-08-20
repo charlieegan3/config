@@ -21,7 +21,7 @@ local filetypes = {
 	yaml = { "*.yaml.tpl" },
 	sh = { "*.sh.tpl" },
 	json = { "*.json.tpl" },
-	markdown = { "*.md" },
+	markdown = { "*.md", "*.mdx" },
 	eruby = { "*.html.erb", "*.html.plush" }
 }
 
