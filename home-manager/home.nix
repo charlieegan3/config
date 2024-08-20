@@ -57,6 +57,7 @@
     ./starship.nix
     ./atuin.nix
     ./yazi.nix
+    ./gron.nix
 
     ./git/git.nix
 
