@@ -53,11 +53,12 @@
     ./direnv.nix
     ./bash/bash.nix
     ./readline.nix
-    ./autojump.nix
     ./starship.nix
     ./atuin.nix
     ./yazi.nix
     ./gron.nix
+    ./zoxide.nix
+    ./navi/navi.nix
 
     ./git/git.nix
 

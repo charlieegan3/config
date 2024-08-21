@@ -1,0 +1,7 @@
+% go
+
+# Watch tests, all
+find . | grep go | entr -c -r go test <pkg>
+
+# Watch tests, run
+find . | grep go | entr -c -r go test <pkg> -run <test>
