@@ -13,7 +13,7 @@ vim.api.nvim_set_keymap('n', 'H', ':only|up|bp<CR>', { noremap = true, silent = 
 
 -- Open file/buffer finder
 vim.api.nvim_set_keymap('n', '<SPACE>', ':up | :Files<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<CR>', ':up | :Buffers<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader><CR>', ':up | :Buffers<CR>', { noremap = true, silent = true })
 
 -- Go to definition
 vim.api.nvim_set_keymap('n', '<Tab>', '<C-]>', { noremap = true, silent = true })
