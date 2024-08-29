@@ -23,3 +23,11 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	pattern = { "*" },
 	command = [[%s/\s\+$//e]],
 })
+
+-- Use internal formatting for bindings like gq.
+-- LSP adopts gq for expression formatting.
+vim.api.nvim_create_autocmd('LspAttach', {
+	callback = function(args)
+		vim.bo[args.buf].formatexpr = nil
+	end,
+})
