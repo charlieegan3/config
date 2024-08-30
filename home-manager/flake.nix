@@ -49,13 +49,12 @@
       type = "github";
       owner = "charlieegan3";
       repo = "gpxif";
-      rev = "b324b7b2d9af68f6df1ce23020552d3d86cd8da7";
+      rev = "93214f635583680e98d987ef49814b5409a9a8b3";
     };
   };
 
   outputs =
     {
-      self,
       nixpkgs,
       flake-utils,
       home-manager,
