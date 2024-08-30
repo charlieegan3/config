@@ -2,6 +2,7 @@
   pkgs,
   userName,
   mac-app-util,
+  gpxifPkgs,
   ...
 }:
 
@@ -36,6 +37,9 @@
     xz
     just
     imagemagick
+    wakelan
+
+    gpxifPkgs.default
 
     age # secret management
 

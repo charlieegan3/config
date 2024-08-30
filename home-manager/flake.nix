@@ -44,6 +44,13 @@
       repo = "git-hooks.nix";
       rev = "c7012d0c18567c889b948781bc74a501e92275d1";
     };
+
+    gpxif = {
+      type = "github";
+      owner = "charlieegan3";
+      repo = "gpxif";
+      rev = "b324b7b2d9af68f6df1ce23020552d3d86cd8da7";
+    };
   };
 
   outputs =
@@ -54,6 +61,7 @@
       home-manager,
       brew-nix,
       mac-app-util,
+      gpxif,
       ...
     }:
     let
@@ -67,6 +75,7 @@
           inherit system;
           overlays = [ brew-nix.overlays.default ];
         };
+        gpxifPkgs = gpxif.packages.${system};
       in
       {
         packages = {
@@ -74,7 +83,7 @@
             inherit pkgs;
             modules = [ ./home.nix ];
             extraSpecialArgs = {
-              inherit userName mac-app-util;
+              inherit userName mac-app-util gpxifPkgs;
             };
           };
         };
