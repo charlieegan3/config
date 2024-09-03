@@ -12,17 +12,18 @@ end
 
 -- Define the file types and their corresponding patterns
 local filetypes = {
-	terraform = { "*.tf.template", "*.hcl" },
-	ruby = { "Gemfile", "Rakefile", "Vagrantfile", "Thorfile", "Procfile", "*.ru", "*.rake", "*.json.jbuilder", "*.rb.no" },
-	vim = { ".vim_config" },
 	c = { "*.conf" },
 	dockerfile = { "*Dockerfile*" },
+	eruby = { "*.html.erb", "*.html.plush" },
 	jenkins = { "*Jenkinsfile*" },
-	yaml = { "*.yaml.tpl" },
-	sh = { "*.sh.tpl" },
 	json = { "*.json.tpl" },
 	markdown = { "*.md", "*.mdx" },
-	eruby = { "*.html.erb", "*.html.plush" }
+	rego = { "*.rego", "*.rq" },
+	ruby = { "Gemfile", "Rakefile", "Vagrantfile", "Thorfile", "Procfile", "*.ru", "*.rake", "*.json.jbuilder", "*.rb.no" },
+	sh = { "*.sh.tpl" },
+	terraform = { "*.tf.template", "*.hcl" },
+	vim = { ".vim_config" },
+	yaml = { "*.yaml.tpl" },
 }
 
 -- Iterate over the table and set autocmds
