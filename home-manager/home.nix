@@ -3,6 +3,7 @@
   userName,
   mac-app-util,
   gpxifPkgs,
+  agenix,
   ...
 }:
 
@@ -41,7 +42,9 @@
 
     gpxifPkgs.default
 
-    age # secret management
+    age
+    # secret management
+    agenix.packages.${system}.default
 
     gh
     nodejs # needed by gh, and copilot

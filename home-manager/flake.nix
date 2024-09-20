@@ -51,6 +51,13 @@
       repo = "gpxif";
       rev = "93214f635583680e98d987ef49814b5409a9a8b3";
     };
+
+    agenix = {
+      type = "github";
+      owner = "ryantm";
+      repo = "agenix";
+      rev = "f6291c5935fdc4e0bef208cfc0dcab7e3f7a1c41";
+    };
   };
 
   outputs =
@@ -58,6 +65,7 @@
       nixpkgs,
       flake-utils,
       home-manager,
+      agenix,
       brew-nix,
       mac-app-util,
       gpxif,
@@ -82,7 +90,12 @@
             inherit pkgs;
             modules = [ ./home.nix ];
             extraSpecialArgs = {
-              inherit userName mac-app-util gpxifPkgs;
+              inherit
+                userName
+                mac-app-util
+                gpxifPkgs
+                agenix
+                ;
             };
           };
         };
