@@ -39,6 +39,7 @@
     just
     imagemagick
     wakelan
+    rclone
 
     gpxifPkgs.default
 
